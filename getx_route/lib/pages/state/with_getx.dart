@@ -5,12 +5,10 @@ import '../../controller/count_controller_with_getx.dart';
 class WithGetX extends StatelessWidget {
   WithGetX({Key key}) : super(key: key);
 
-  CountControllerWithGetX con = Get.put(CountControllerWithGetX());
-
   Widget _button(String id) {
     return ElevatedButton(
       onPressed: () {
-        Get.find<CountControllerWithGetX>().increase(id);
+        CountControllerWithGetX.to.increase(id);
       },
       child: Text('+'),
     );
@@ -27,7 +25,7 @@ class WithGetX extends StatelessWidget {
             id: 'firstButton',
             builder: (controller) {
               return Text(
-                "${controller.count}",
+                "${CountControllerWithGetX.to.count}",
                 style: TextStyle(fontSize: 30),
               );
             },
