@@ -11,15 +11,20 @@ class ReactiveStateManagePage extends StatelessWidget {
     Get.put(CountControllerWithReactive());
     return Scaffold(
       appBar: AppBar(
-        title: Text('단순상태 관리'),
+        title: Text('반응형 상태 관리'),
       ),
       body: Center(
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text('Reactive GetX'),
-          Obx(() =>
-              Text('${Get.find<CountControllerWithReactive>().count.value}')),
+          // GetX<CountControllerWithReactive>(builder: (controller) {
+          //   return Text('${controller.count.value}');
+          // }),
+          Obx(
+            () =>
+                Text('${Get.find<CountControllerWithReactive>().count.value}'),
+          ),
           ElevatedButton(
             onPressed: () {
               Get.find<CountControllerWithReactive>().increase();

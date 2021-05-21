@@ -13,10 +13,12 @@ class BindingPage extends GetView<CountControllerWithGetX> {
       ),
       body: Column(
         children: [
-          Obx(() => Text(
-                controller.count.toString(),
-                style: TextStyle(fontSize: 30),
-              )),
+          Obx(
+            () => Text(
+              controller.count.toString(),
+              style: TextStyle(fontSize: 30),
+            ),
+          ),
           // GetBuilder<CountControllerWithGetX>(
           //     id: 'binding',
           //     builder: (item) {
@@ -26,11 +28,12 @@ class BindingPage extends GetView<CountControllerWithGetX> {
           //       );
           //     }),
           ElevatedButton(
-              onPressed: () {
-                controller.increase('binding');
-                // CountControllerWithGetX.to.increase('binding');
-              },
-              child: Text('바인딩'))
+            onPressed: () {
+              controller.increase('binding');
+              // CountControllerWithGetX.to.increase('binding');
+            },
+            child: Text('바인딩'),
+          )
         ],
       ),
     );

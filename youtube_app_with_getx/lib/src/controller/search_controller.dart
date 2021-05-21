@@ -12,6 +12,7 @@ class YoutubeSearchController extends GetxController {
   RxList<String> history = RxList<String>.empty(growable: true);
   Rx<YoutubeVideoResult> youtubeVideoResult = YoutubeVideoResult(items: []).obs;
   String _currnectKeyword;
+
   @override
   void onInit() async {
     _event();

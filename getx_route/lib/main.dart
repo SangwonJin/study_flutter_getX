@@ -51,11 +51,12 @@ class MyApp extends StatelessWidget {
           transition: Transition.leftToRight,
         ),
         GetPage(
-          name: '/binding',
+          name: '/binding', //BindingPage안에 이미 obs 사용하기때문에 바로 객체화 됨
           page: () => BindingPage(),
           transition: Transition.leftToRight,
           binding: BindingsBuilder(() {
-            Get.put(CountControllerWithGetX());
+            Get.lazyPut<CountControllerWithGetX>(
+                () => (CountControllerWithGetX()));
           }),
         ),
         GetPage(

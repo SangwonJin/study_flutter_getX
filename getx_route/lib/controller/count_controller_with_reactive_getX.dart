@@ -27,8 +27,9 @@ class CountControllerWithReactive extends GetxController {
     });
     list.add('item');
     list.addAll(['asd']);
+
+    list.addIf(user.value.name == "ran", 'ok');
     print(list);
-    list.addIf(user.value.name == "sangwon", 'ok');
   }
 
   @override

@@ -13,7 +13,7 @@ class YoutubeBottomSheet extends StatelessWidget {
           'Create',
           style: TextStyle(fontSize: 16),
         ),
-        IconButton(icon: Icon(Icons.close), onPressed: Get.back)
+        IconButton(icon: Icon(Icons.close), onPressed: Get.back),
       ],
     );
   }
